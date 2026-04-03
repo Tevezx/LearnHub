@@ -1,4 +1,4 @@
-package com.learnhub.domain;
+package com.learnhub.domain.usuario;
 
 import java.util.Date;
 
@@ -7,13 +7,14 @@ public class Usuario {
     private String nome;
     private String email;
     private Date dataCadastro;
-    // private Status status;
+    private Status status;
 
-    public Usuario(String id, String nome, String email, Date dataCadastro) {
+    public Usuario(String id, String nome, String email, Date dataCadastro, Status status) {
         this.id = id;
         this.nome = nome;
         this.email = email;
         this.dataCadastro = dataCadastro;
+        this.status = status;
     }
 
     public String getId() {
@@ -34,5 +35,9 @@ public class Usuario {
 
     public Date getDataCadastro() {
         return dataCadastro;
+    }
+
+    public Status getStatus() {
+        return status;
     }
 }
