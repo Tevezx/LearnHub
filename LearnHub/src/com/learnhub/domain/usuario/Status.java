@@ -1,5 +1,5 @@
 package com.learnhub.domain.usuario;
 
 public enum Status {
-    ATIVO, INATIVO, PENDENTE
+    ATIVO, INATIVO, PENDENTE;
 }
