@@ -9,7 +9,6 @@ public class Usuario {
     private Date dataCadastro;
     // private Status status;
 
-
     public Usuario(String id, String nome, String email, Date dataCadastro) {
         this.id = id;
         this.nome = nome;
@@ -17,5 +16,23 @@ public class Usuario {
         this.dataCadastro = dataCadastro;
     }
 
+    public String getId() {
+        return id;
+    }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public Date getDataCadastro() {
+        return dataCadastro;
+    }
 }
