@@ -10,5 +10,12 @@ public class Usuario {
     // private Status status;
 
 
+    public Usuario(String id, String nome, String email, Date dataCadastro) {
+        this.id = id;
+        this.nome = nome;
+        this.email = email;
+        this.dataCadastro = dataCadastro;
+    }
+
 
 }
