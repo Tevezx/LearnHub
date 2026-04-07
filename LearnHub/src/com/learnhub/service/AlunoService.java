@@ -9,5 +9,7 @@ public class AlunoService {
         return new Aluno(id, nome, email, dataCadastro, status);
     }
 
-
+    public Curso matricularAluno(String id, Curso curso){
+        return curso;
+    }
 }

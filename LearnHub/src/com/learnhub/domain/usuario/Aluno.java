@@ -18,7 +18,9 @@ public class Aluno extends Usuario{
         return alunoService.criarAluno(id, nome, email, dataCadastro, status);
     }
 
-
+    public Curso matricularAluno(String id, Curso curso){
+        return alunoService.matricularAluno(id, curso);
+    }
 
      @Override
     public String toString() {
