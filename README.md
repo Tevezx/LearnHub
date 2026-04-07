@@ -1,8 +1,8 @@
-# 🎓 EduTrack – Plataforma de Gestão de Cursos Online
+# 🎓 LearnHub – Plataforma de Gestão de Cursos Online
 
 ## 📌 Sobre o Projeto
 
-**EduTrack** é um sistema de gerenciamento de cursos online desenvolvido em **Java**, com foco em **orientação a objetos, modelagem de domínio e regras de negócio**.
+**LearnHub** é um sistema de gerenciamento de cursos online desenvolvido em **Java**, com foco em **orientação a objetos, modelagem de domínio e regras de negócio**.
 
 O projeto simula uma plataforma de ensino digital onde **instrutores podem criar cursos** e **alunos podem se matricular, acompanhar progresso e avaliar conteúdos**.
 
