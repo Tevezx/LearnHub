@@ -32,6 +32,16 @@ public class Curso {
         this.alunosMatriculados = alunosMatriculados;
     }
 
+    public Curso(String id, String titulo, String descricao, NivelCurso nivelCurso, String cargaHoraria, Date dataCriacao, StatusCurso statusCurso) {
+        this.id = id;
+        this.titulo = titulo;
+        this.descricao = descricao;
+        this.nivelCurso = nivelCurso;
+        this.cargaHoraria = cargaHoraria;
+        this.dataCriacao = dataCriacao;
+        this.statusCurso = statusCurso;
+    }
+
     @Override
     public String toString() {
         return "Curso{" +

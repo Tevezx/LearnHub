@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.List;
 
 public class CursoService {
-    public Curso criarCurso(String id, String titulo, String descricao, List<Instrutor> instrutor, NivelCurso nivelCurso, String cargaHoraria, Date dataCriacao, StatusCurso statusCurso, List<Modulo> modulos, List<Aluno> alunosMatriculados){
-        return new Curso(id, titulo, descricao, instrutor, nivelCurso, cargaHoraria, dataCriacao, statusCurso, modulos, alunosMatriculados);
+    public Curso criarCurso(String id, String titulo, String descricao, NivelCurso nivelCurso, String cargaHoraria, Date dataCriacao, StatusCurso statusCurso){
+        return new Curso(id, titulo, descricao, nivelCurso, cargaHoraria, dataCriacao, statusCurso);
     }
 }
