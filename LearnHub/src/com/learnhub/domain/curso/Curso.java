@@ -4,6 +4,7 @@ import com.learnhub.domain.conteudo.Modulo;
 import com.learnhub.domain.usuario.Aluno;
 import com.learnhub.domain.usuario.Instrutor;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -11,15 +12,15 @@ public class Curso {
     private String id;
     private String titulo;
     private String descricao;
-    private List<Instrutor> instrutor;
+    private Instrutor instrutor;
     private NivelCurso nivelCurso;
     private String cargaHoraria;
-    private Date dataCriacao;
+    private final Date dataCriacao;
     private StatusCurso statusCurso;
-    private List<Modulo> modulos;
-    private List<Aluno> alunosMatriculados;
+    private List<Modulo> modulos = new ArrayList<>();
+    private List<Aluno> alunosMatriculados = new ArrayList<>();
 
-    public Curso(String id, String titulo, String descricao, List<Instrutor> instrutor, NivelCurso nivelCurso, String cargaHoraria, Date dataCriacao, StatusCurso statusCurso, List<Modulo> modulos, List<Aluno> alunosMatriculados) {
+    public Curso(String id, String titulo, String descricao, Instrutor instrutor, NivelCurso nivelCurso, String cargaHoraria, Date dataCriacao, StatusCurso statusCurso) {
         this.id = id;
         this.titulo = titulo;
         this.descricao = descricao;
@@ -28,8 +29,6 @@ public class Curso {
         this.cargaHoraria = cargaHoraria;
         this.dataCriacao = dataCriacao;
         this.statusCurso = statusCurso;
-        this.modulos = modulos;
-        this.alunosMatriculados = alunosMatriculados;
     }
 
     public Curso(String id, String titulo, String descricao, NivelCurso nivelCurso, String cargaHoraria, Date dataCriacao, StatusCurso statusCurso) {
@@ -40,6 +39,16 @@ public class Curso {
         this.cargaHoraria = cargaHoraria;
         this.dataCriacao = dataCriacao;
         this.statusCurso = statusCurso;
+    }
+
+    public Curso(String id, String titulo, String descricao, NivelCurso nivelCurso, Instrutor instrutor, String cargaHoraria, Date dataCriacao, StatusCurso statusCurso) {
+        this(id, titulo, descricao, nivelCurso, cargaHoraria, dataCriacao, statusCurso);
+        this.instrutor = instrutor;
+    }
+
+    public void adicionarModulo(Modulo modulo){
+        modulos.add(modulo);
+        System.out.println("Módulo: " + modulo.getTitulo() + " adicionado com sucesso!");
     }
 
     @Override
@@ -102,11 +111,11 @@ public class Curso {
         this.nivelCurso = nivelCurso;
     }
 
-    public List<Instrutor> getInstrutor() {
+    public Instrutor getInstrutor() {
         return instrutor;
     }
 
-    public void setInstrutor(List<Instrutor> instrutor) {
+    public void setInstrutor(Instrutor instrutor) {
         this.instrutor = instrutor;
     }
 
