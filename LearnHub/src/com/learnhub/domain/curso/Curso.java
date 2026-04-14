@@ -4,6 +4,7 @@ import com.learnhub.domain.conteudo.Modulo;
 import com.learnhub.domain.usuario.Aluno;
 import com.learnhub.domain.usuario.Instrutor;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -15,12 +16,12 @@ public class Curso {
     private Instrutor instrutor;
     private NivelCurso nivelCurso;
     private String cargaHoraria;
-    private final Date dataCriacao;
+    private final LocalDate dataCriacao;
     private StatusCurso statusCurso;
     private List<Modulo> modulos = new ArrayList<>();
     private List<Aluno> alunosMatriculados = new ArrayList<>();
 
-    public Curso(String id, String titulo, String descricao, Instrutor instrutor, NivelCurso nivelCurso, String cargaHoraria, Date dataCriacao, StatusCurso statusCurso) {
+    public Curso(String id, String titulo, String descricao, Instrutor instrutor, NivelCurso nivelCurso, String cargaHoraria, LocalDate dataCriacao, StatusCurso statusCurso) {
         this.id = id;
         this.titulo = titulo;
         this.descricao = descricao;
@@ -31,7 +32,7 @@ public class Curso {
         this.statusCurso = statusCurso;
     }
 
-    public Curso(String id, String titulo, String descricao, NivelCurso nivelCurso, String cargaHoraria, Date dataCriacao, StatusCurso statusCurso) {
+    public Curso(String id, String titulo, String descricao, NivelCurso nivelCurso, String cargaHoraria, LocalDate dataCriacao, StatusCurso statusCurso) {
         this.id = id;
         this.titulo = titulo;
         this.descricao = descricao;
@@ -41,7 +42,7 @@ public class Curso {
         this.statusCurso = statusCurso;
     }
 
-    public Curso(String id, String titulo, String descricao, NivelCurso nivelCurso, Instrutor instrutor, String cargaHoraria, Date dataCriacao, StatusCurso statusCurso) {
+    public Curso(String id, String titulo, String descricao, NivelCurso nivelCurso, Instrutor instrutor, String cargaHoraria, LocalDate dataCriacao, StatusCurso statusCurso) {
         this(id, titulo, descricao, nivelCurso, cargaHoraria, dataCriacao, statusCurso);
         this.instrutor = instrutor;
     }
@@ -99,7 +100,7 @@ public class Curso {
         this.cargaHoraria = cargaHoraria;
     }
 
-    public Date getDataCriacao() {
+    public LocalDate getDataCriacao() {
         return dataCriacao;
     }
 
