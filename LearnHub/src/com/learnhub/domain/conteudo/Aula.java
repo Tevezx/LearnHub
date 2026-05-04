@@ -1,18 +1,26 @@
 package com.learnhub.domain.conteudo;
 
+import com.learnhub.domain.usuario.Instrutor;
+
 public class Aula {
     private String id;
     private String titulo;
     private Integer duracao;
-    public TipoAula tipoAula;
-    public Integer ordem;
+    private TipoAula tipoAula;
+    private Integer ordem;
+    private Instrutor instrutor;
 
-    public Aula(String id, String titulo, Integer duracao, TipoAula tipoAula, Integer ordem) {
+    public Aula(String id, String titulo, Integer duracao, TipoAula tipoAula, Integer ordem, Instrutor instrutor) {
         this.id = id;
         this.titulo = titulo;
         this.duracao = duracao;
         this.tipoAula = tipoAula;
         this.ordem = ordem;
+        this.instrutor = instrutor;
+    }
+
+    public void adicionarInstrutor(Instrutor instrutor){
+        this.instrutor = instrutor;
     }
 
     @Override
@@ -56,5 +64,9 @@ public class Aula {
 
     public void setOrdem(Integer ordem) {
         this.ordem = ordem;
+    }
+
+    public Instrutor getInstrutor() {
+        return instrutor;
     }
 }

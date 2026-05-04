@@ -1,5 +1,6 @@
 package com.learnhub.domain.conteudo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Modulo {
@@ -7,14 +8,17 @@ public class Modulo {
     private String titulo;
     private String descricao;
     private Integer ordem;
-    private List<Aula> aulas;
+    private List<Aula> aulas = new ArrayList<>();
 
-    public Modulo(String id, String titulo, String descricao, Integer ordem, List<Aula> aulas) {
+    public Modulo(String id, String titulo, String descricao, Integer ordem) {
         this.id = id;
         this.titulo = titulo;
         this.descricao = descricao;
         this.ordem = ordem;
-        this.aulas = aulas;
+    }
+
+    public void adicionarAulas(Aula aula){
+        aulas.add(aula);
     }
 
     @Override

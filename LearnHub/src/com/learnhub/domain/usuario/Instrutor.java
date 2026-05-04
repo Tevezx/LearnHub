@@ -11,22 +11,26 @@ import java.util.List;
 
 public class Instrutor extends Usuario{
     private List<Curso> cursos = new ArrayList<>();
-    private CursoService cursoService = new CursoService();
-
 
     public Instrutor(String id, String nome, String email, Date dataCadastro, Status status) {
         super(id, nome, email, dataCadastro, status);
     }
 
-    public Curso criarCurso(String id, String titulo, String descricao, NivelCurso nivelCurso, String cargaHoraria, Date dataCriacao, StatusCurso statusCurso){
-        Curso curso = cursoService.criarCurso(id, titulo, descricao, nivelCurso, cargaHoraria, dataCriacao, statusCurso);
-        cursos.add(curso);
-        return curso;
+    public void adicionarCurso(Curso curso){
+        this.cursos.add(curso);
+    }
+
+    @Override
+    public String toString() {
+        return "Instrutor{" +
+                "id='" + getId() + '\'' +
+                ", nome='" + getNome() + '\'' +
+                ", email='" + getEmail() + '\'' +
+                ", status=" + getStatus() +
+                '}';
     }
 
     public List<Curso> getCursos(){
         return cursos;
     }
-
-
 }
