@@ -4,19 +4,19 @@ import com.learnhub.domain.curso.Curso;
 import com.learnhub.domain.curso.StatusCurso;
 import com.learnhub.domain.usuario.Aluno;
 import com.learnhub.domain.usuario.Status;
-import com.learnhub.exeption.BusinessExeption;
+import com.learnhub.execption.BusinessExecption;
 
 public class AlunoService {
 
     public void matricularAluno(Aluno aluno, Curso curso) {
         if(curso.getAlunosMatriculados().contains(aluno)){
-            throw new BusinessExeption("Aluno já está matriculado no curso!");
+            throw new BusinessExecption("Aluno já está matriculado no curso!");
         }
         if (!(curso.getStatusCurso() == StatusCurso.PUBLICADO)) {
-            throw new BusinessExeption("Não foi possível matricular o aluno" + aluno.getNome() + " pois curso não está publicado");
+            throw new BusinessExecption("Não foi possível matricular o aluno" + aluno.getNome() + " pois curso não está publicado");
         }
         if(!(aluno.getStatus() == Status.ATIVO)){
-            throw new BusinessExeption("Aluno não está ativo");
+            throw new BusinessExecption("Aluno não está ativo");
         }
 
         curso.getAlunosMatriculados().add(aluno);

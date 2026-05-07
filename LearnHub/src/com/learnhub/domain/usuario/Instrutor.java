@@ -18,6 +18,7 @@ public class Instrutor extends Usuario{
 
     public void adicionarCurso(Curso curso){
         this.cursos.add(curso);
+        System.out.println("Curso: " + curso.getTitulo() + " adicionado ao instrutor!");
     }
 
     @Override
