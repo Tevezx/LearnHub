@@ -14,7 +14,8 @@ public class ExportCursoService {
         Files.createDirectories(path.getParent());
 
         String conteudo = curso.toString();
-
         Files.writeString(path, conteudo);
+
+        System.out.println("Arquivo exportado para .json!");
     }
 }

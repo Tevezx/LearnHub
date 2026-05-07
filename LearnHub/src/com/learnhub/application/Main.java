@@ -14,10 +14,11 @@ import com.learnhub.service.AlunoService;
 import com.learnhub.service.CursoService;
 import com.learnhub.service.ModuloService;
 
+import java.io.IOException;
 import java.time.LocalDate;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         System.out.println("Bem-vindo ao LearnHub!");
 
         CursoService cursoService = new CursoService();
@@ -30,10 +31,6 @@ public class Main {
         instrutor.adicionarCurso(curso);
 
         System.out.println(instrutor.getCursos());
-        
-        // Exportando curso criado para arquivo .json
-        ExportCursoService exportCursoService = new ExportCursoService();
-        exportCursoService.exportCurso(curso);
       
         // Criação de Aluno e Matricula no curso criado
         Aluno aluno = new Aluno("1", "Carlos", "carlos@gmail.com", new java.util.Date(), Status.ATIVO);
@@ -50,6 +47,10 @@ public class Main {
         curso.adicionarModulo(modulo);
 
         System.out.println(curso);
+
+        // Exportando curso criado para arquivo .json
+        ExportCursoService exportCursoService = new ExportCursoService();
+        exportCursoService.exportCurso(curso);
 
     }
 }
