@@ -9,6 +9,7 @@ import com.learnhub.domain.curso.StatusCurso;
 import com.learnhub.domain.usuario.Aluno;
 import com.learnhub.domain.usuario.Instrutor;
 import com.learnhub.domain.usuario.Status;
+import com.learnhub.service.ExportCursoService;
 import com.learnhub.service.AlunoService;
 import com.learnhub.service.CursoService;
 import com.learnhub.service.ModuloService;
@@ -29,7 +30,11 @@ public class Main {
         instrutor.adicionarCurso(curso);
 
         System.out.println(instrutor.getCursos());
-
+        
+        // Exportando curso criado para arquivo .json
+        ExportCursoService exportCursoService = new ExportCursoService();
+        exportCursoService.exportCurso(curso);
+      
         // Criação de Aluno e Matricula no curso criado
         Aluno aluno = new Aluno("1", "Carlos", "carlos@gmail.com", new java.util.Date(), Status.ATIVO);
         alunoService.matricularAluno(aluno, instrutor.getCursos().getFirst());
